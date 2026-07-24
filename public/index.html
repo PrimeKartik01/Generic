@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Project — Homes with a point of view</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/global.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: "#1B2430",
+                        "ink-soft": "#2E394A",
+                        sand: "#EDE6D9",
+                        paper: "#FAF8F4",
+                        brass: "#A8823C",
+                        "brass-soft": "#C9A96A",
+                        slate: "#5C6570"
+                    },
+                    fontFamily: {
+                        display: ["Fraunces", "serif"],
+                        body: ["Inter", "sans-serif"],
+                        mono: ["IBM Plex Mono", "monospace"]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-body bg-paper text-ink overflow-x-hidden">
+
+    <div id="navbar"></div>
+
+    <section class="bg-sand">
+        <div class=" mx-auto">
+            <div class="relative">
+                <div id="heroCarousel"></div>
+                <div class="mt-6 md:absolute md:right-6 md:top-6 md:mt-0 md:w-[320px] lg:w-[360px] z-20">
+                    <div id="enquirySidePanel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="aboutStory"></div>
+
+    <div id="listings"></div>
+    <div id="philosophy"></div>
+    <div id="testimonials"></div>
+    <div id="ctaBanner"></div>
+    <div id="footer"></div>
+    <div id="enquiryPopup"></div>
+
+    <script type="module" src="pages/home.js"></script>
+
+</body>
+</html>
