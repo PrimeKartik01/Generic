@@ -16,9 +16,8 @@ export const footerData = {
         {
             heading: "Office",
             links: [
-                { label: "-", href: "#" },
-                { label: "-", href: "#" },
-                { label: "870-0002996", href: "tel:+16505550148" }
+                { label: "Ground floor, Block-D, Pioneer Urban Square, Office no :-006, Sector 62, Gurugram, Ghata, Haryana 122098", href: "#" },
+                { label: "870-0002996", href: "tel:+918700002996" }
             ]
         }
     ],
