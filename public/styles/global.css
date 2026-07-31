@@ -86,3 +86,290 @@ textarea:focus-visible {
   outline: 2px solid var(--brass);
   outline-offset: 3px;
 }
+
+/* ═══════════════════════════════════════════════
+   NAVBAR LINKS
+═══════════════════════════════════════════════ */
+
+.nav-link {
+  font-size: 0.875rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link:hover {
+  color: var(--brass);
+}
+
+/* ═══════════════════════════════════════════════
+   NAVBAR DROPDOWN
+═══════════════════════════════════════════════ */
+
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-link-dropdown {
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.nav-dropdown-wrapper:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 40px rgba(27, 36, 48, 0.12), 0 2px 8px rgba(27, 36, 48, 0.06);
+  padding: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 100;
+}
+
+/* Small arrow/bridge above dropdown to prevent gap hover loss */
+.nav-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.18s ease, color 0.18s ease;
+  border-radius: 1px;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--sand);
+  color: var(--brass);
+}
+
+.nav-dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--slate);
+  transition: color 0.18s ease;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-icon {
+  color: var(--brass);
+}
+
+.nav-dropdown-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-dropdown-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
+.nav-dropdown-desc {
+  font-size: 0.7rem;
+  color: var(--slate);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-desc {
+  color: var(--brass-soft);
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE NAV
+═══════════════════════════════════════════════ */
+
+.mobile-nav-link {
+  font-size: 1.125rem;
+  font-family: var(--font-display);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-nav-link:hover {
+  color: var(--brass);
+}
+
+.mobile-nav-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ═══════════════════════════════════════════════
+   LISTINGS FILTER TABS
+═══════════════════════════════════════════════ */
+
+.listings-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.listings-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--slate);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.listings-filter-btn svg {
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.listings-filter-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--sand);
+}
+
+.listings-filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ═══════════════════════════════════════════════
+   LISTINGS GRID ANIMATION
+═══════════════════════════════════════════════ */
+
+.listings-grid {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.listings-grid-exit {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.listings-grid-enter {
+  animation: gridFadeIn 0.35s ease forwards;
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PROPERTY LISTINGS PAGE (residential / commercial)
+═══════════════════════════════════════════════ */
+
+.property-page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.property-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(168, 130, 60, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.property-page-icon {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(27, 36, 48, 0.06);
+}
+
+/* SVG variant — inherits box, colours icon with brass */
+.property-page-icon--svg {
+  color: var(--brass);
+}
+
+.property-page-icon--svg svg {
+  width: 34px;
+  height: 34px;
+  stroke: currentColor;
+}
+
+
+.text-line {
+  color: var(--line);
+}
