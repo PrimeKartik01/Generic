@@ -53,9 +53,9 @@ export const privacyData = {
             heading: "6. Contacting Our Privacy Lead",
             content: "If you have questions, concerns, or requests regarding this Privacy Policy or our handling of your data, please contact our team directly.",
             contactInfo: {
-                email: "privacy@exclusiveproject.com",
+                email: "exclusiveleads@ssprime.site",
                 phone: "870-0002996",
-                address: "Exclusive Project Practice, Real Estate Division"
+                address: "Ground floor, Block-D, Pioneer Urban Square, Office no :-006, Sector 62, Gurugram, Ghata, Haryana 122098"
             }
         }
     ]
